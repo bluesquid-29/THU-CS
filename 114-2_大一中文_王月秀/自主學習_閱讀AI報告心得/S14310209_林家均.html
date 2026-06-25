@@ -1,0 +1,230 @@
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#F7F3EE;--warm:#EDE5D8;--sand:#D6C9B5;--clay:#B89E85;
+  --ink:#2C2416;--ink2:#5A4E3C;--accent:#8B4E3B;--accent2:#C4835A;--soft:#F0EBE3;
+}
+body{font-family:Georgia,'Noto Serif TC',serif;background:var(--cream);color:var(--ink);}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:var(--warm);border-bottom:1px solid var(--sand);}
+.nav-logo{font-style:italic;color:var(--accent);font-size:1rem;font-weight:400;}
+.nav-links{display:flex;gap:1.5rem;list-style:none;}
+.nav-links a{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink2);text-decoration:none;}
+
+.hero{display:grid;grid-template-columns:1fr 120px;align-items:center;padding:2.5rem 2rem;gap:2rem;border-bottom:1px solid var(--sand);}
+.eyebrow{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--clay);margin-bottom:0.6rem;}
+.hero-name{font-size:2.6rem;font-weight:700;line-height:1.05;color:var(--ink);}
+.hero-name span{display:block;font-style:italic;font-weight:400;color:var(--accent);font-size:0.55em;letter-spacing:0.05em;margin-top:2px;}
+.tagline{font-size:0.88rem;color:var(--ink2);line-height:1.8;margin:1rem 0 1.2rem;border-left:2px solid var(--accent2);padding-left:1rem;font-weight:300;}
+.badges{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.badge{font-size:0.68rem;padding:0.28rem 0.75rem;border:1px solid var(--sand);border-radius:100px;color:var(--ink2);background:var(--soft);}
+.avatar{width:90px;height:100px;background:var(--warm);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid var(--sand);flex-shrink:0;}
+.av-t{font-size:2.4rem;font-weight:700;color:var(--accent);}
+.av-s{font-size:0.58rem;color:var(--clay);letter-spacing:0.05em;margin-top:2px;}
+
+.sec{padding:2rem 2rem;border-bottom:1px solid var(--sand);}
+.sec-bg{padding:2rem 2rem;background:var(--warm);border-bottom:1px solid var(--sand);}
+.lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--clay);margin-bottom:0.4rem;}
+.sec-title{font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:1.3rem;line-height:1.2;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
+.prose{font-size:0.86rem;color:var(--ink2);line-height:2;font-weight:300;}
+.prose p+p{margin-top:0.8rem;}
+
+.info-list{display:flex;flex-direction:column;gap:0.6rem;}
+.ii{display:flex;align-items:flex-start;gap:0.7rem;padding:0.7rem 0.9rem;background:var(--soft);border-radius:10px;border:1px solid var(--warm);}
+.idot{width:6px;height:6px;border-radius:50%;background:var(--accent2);flex-shrink:0;margin-top:5px;}
+.ilbl{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--clay);}
+.ival{font-size:0.83rem;color:var(--ink);}
+
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.sc{background:var(--cream);border:1px solid var(--sand);border-radius:14px;padding:1.1rem;}
+.si{font-size:1.3rem;margin-bottom:0.5rem;}
+.sn{font-size:0.95rem;font-weight:700;color:var(--ink);margin-bottom:0.25rem;}
+.sd{font-size:0.75rem;color:var(--ink2);line-height:1.55;}
+
+.exp-card{background:var(--soft);border:1px solid var(--sand);border-radius:14px;padding:1.4rem;}
+.exp-h{display:flex;align-items:center;gap:0.9rem;margin-bottom:1rem;}
+.exp-logo{width:42px;height:42px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:var(--cream);flex-shrink:0;}
+.exp-co{font-size:1rem;font-weight:700;color:var(--ink);}
+.exp-role{font-size:0.73rem;color:var(--clay);}
+.exp-per{margin-left:auto;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--clay);background:var(--warm);border:1px solid var(--sand);border-radius:100px;padding:0.2rem 0.65rem;}
+.el{list-style:none;display:flex;flex-direction:column;gap:0.55rem;}
+.el li{font-size:0.8rem;color:var(--ink2);line-height:1.6;padding-left:0.9rem;position:relative;font-weight:300;}
+.el li::before{content:'';position:absolute;left:0;top:0.5em;width:4px;height:4px;background:var(--accent2);border-radius:50%;}
+
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.pc{background:var(--soft);border:1px solid var(--sand);border-radius:14px;padding:1.3rem;}
+.ps{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:0.6rem;font-weight:500;}
+.pi{font-size:1.4rem;margin-bottom:0.5rem;}
+.pt{font-size:0.95rem;font-weight:700;color:var(--ink);margin-bottom:0.35rem;}
+.pd{font-size:0.76rem;color:var(--ink2);line-height:1.65;font-weight:300;}
+
+.trow{display:flex;align-items:center;gap:0.7rem;margin-bottom:0.85rem;}
+.tname{display:flex;align-items:center;gap:0.4rem;font-size:0.82rem;color:var(--ink);min-width:130px;}
+.tdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.tbwrap{flex:1;height:5px;background:var(--sand);border-radius:3px;overflow:hidden;}
+.tbar{height:100%;border-radius:3px;}
+.tlvl{font-size:0.66rem;color:var(--clay);min-width:80px;text-align:right;}
+.tsub{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--clay);margin-bottom:0.7rem;margin-top:1rem;}
+
+.ig{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.ic{position:relative;padding:1.4rem;border-radius:14px;min-height:110px;display:flex;flex-direction:column;justify-content:flex-end;}
+.ic.g1{background:linear-gradient(135deg,#2C2416,#5A3A28);}
+.ic.g2{background:linear-gradient(135deg,#3B2D1F,#7A5C42);}
+.ic.g3{background:linear-gradient(135deg,#1F2C24,#3D6456);}
+.ic.g4{background:linear-gradient(135deg,#2A1F35,#6B4E85);}
+.inum{position:absolute;top:0.9rem;right:1rem;font-size:2.2rem;font-weight:700;color:rgba(255,255,255,0.07);}
+.iname{font-size:1.05rem;font-weight:700;color:#fff;}
+.idesc{font-size:0.72rem;color:rgba(255,255,255,0.55);line-height:1.5;margin-top:0.2rem;}
+
+.quote-sec{background:var(--ink);padding:2.5rem 2rem;text-align:center;}
+.qt{font-size:1.2rem;font-style:italic;color:var(--cream);max-width:600px;margin:0 auto 0.6rem;line-height:1.6;}
+.qby{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--clay);}
+
+.cl{display:flex;flex-direction:column;gap:0.7rem;}
+.ci{display:flex;align-items:center;gap:0.9rem;padding:0.9rem 1.1rem;background:var(--soft);border:1px solid var(--sand);border-radius:11px;}
+.cion{width:34px;height:34px;background:var(--warm);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.95rem;}
+.clbl{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--clay);}
+.cval{font-size:0.83rem;color:var(--ink);font-weight:500;}
+.contact-intro{font-size:0.86rem;color:var(--ink2);line-height:2;font-weight:300;}
+
+footer{background:var(--ink);color:var(--clay);text-align:center;padding:1.3rem;font-size:0.7rem;letter-spacing:0.08em;}
+footer span{color:var(--accent2);}
+</style>
+
+<nav>
+  <div class="nav-logo">Tiffany Lin · 林家均</div>
+  <ul class="nav-links">
+    <li><a href="#">關於我</a></li><li><a href="#">能力</a></li><li><a href="#">經歷</a></li>
+    <li><a href="#">規劃</a></li><li><a href="#">工具</a></li><li><a href="#">興趣</a></li><li><a href="#">聯絡</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="eyebrow">個人網頁 · 2025</div>
+    <div class="hero-name">林家均<span>Tiffany Lin</span></div>
+    <p class="tagline">ENTP｜熱愛探索材料特性與研發新事物。<br>目標：材料科技研發｜大二進入實驗室，邁向研究所之路。</p>
+    <div class="badges">
+      <span class="badge">東海大學 化材系</span>
+      <span class="badge">ENTP</span>
+      <span class="badge">材料研發志向</span>
+      <span class="badge">AI 數位協作</span>
+      <span class="badge">嘉義人</span>
+    </div>
+  </div>
+  <div class="avatar">
+    <div class="av-t">T</div>
+    <div class="av-s">Tiffany Lin</div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="lbl">關於我</div>
+  <div class="sec-title">嗨，我是 Tiffany 👋</div>
+  <div class="two">
+    <div class="prose">
+      <p>嗨，我是 Tiffany，來自嘉義，目前就讀東海大學化學工程與材料學系一年級。我的志向是投入材料科技研發——探索材料特性、理解它的結構與行為，對我來說是最令人著迷的事。</p>
+      <p>MBTI 是 ENTP，天馬行空的想法多，對還沒被發現的可能性永遠比現狀更感興趣。計畫大二加入實驗室參與專題研究，為研究所累積實質作品集與專業深度。</p>
+      <p>個性直接、節奏快，有時候顯得有點急躁，但這代表我認真在乎每一件事。曾於家樂福擔任收銀員，磨練了應變、溝通與穩定執行的能力。</p>
+    </div>
+    <div class="info-list">
+      <div class="ii"><div class="idot"></div><div><div class="ilbl">英文名</div><div class="ival">Tiffany Lin</div></div></div>
+      <div class="ii"><div class="idot"></div><div><div class="ilbl">MBTI</div><div class="ival">ENTP — 辯論家型</div></div></div>
+      <div class="ii"><div class="idot"></div><div><div class="ilbl">就讀學校</div><div class="ival">東海大學 化學工程與材料學系</div></div></div>
+      <div class="ii"><div class="idot"></div><div><div class="ilbl">高中</div><div class="ival">國立嘉義女子高級中學</div></div></div>
+      <div class="ii"><div class="idot"></div><div><div class="ilbl">家鄉</div><div class="ival">嘉義市</div></div></div>
+      <div class="ii"><div class="idot"></div><div><div class="ilbl">求職目標</div><div class="ival">材料科技研發 / 實驗室專題</div></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec-bg">
+  <div class="lbl">能力與特質</div>
+  <div class="sec-title">我能帶來什麼</div>
+  <div class="sg">
+    <div class="sc"><div class="si">⚡</div><div class="sn">快速執行力</div><div class="sd">ENTP 特質讓我傾向快速嘗試、即時修正，在行動中找到最佳解。</div></div>
+    <div class="sc"><div class="si">🤖</div><div class="sn">AI 工具應用</div><div class="sd">主動學習 AI 協作工具，具備數位原生思維，快速適應新科技。</div></div>
+    <div class="sc"><div class="si">💡</div><div class="sn">創意發想</div><div class="sd">擅長跨領域聯想，能快速產出點子並找到非常規解法。</div></div>
+    <div class="sc"><div class="si">🔬</div><div class="sn">材料研究熱忱</div><div class="sd">對材料特性與結構充滿好奇，熱愛理解事物運作的底層原理。</div></div>
+    <div class="sc"><div class="si">💬</div><div class="sn">溝通與說服</div><div class="sd">ENTP 天生擅長表達與辯論，能清楚傳遞想法並推動共識。</div></div>
+    <div class="sc"><div class="si">📈</div><div class="sn">自我驅動學習</div><div class="sd">對新知充滿好奇，持續學習英文與研究技能，不斷成長。</div></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="lbl">工作經歷</div>
+  <div class="sec-title">實際職場經驗</div>
+  <div class="exp-card">
+    <div class="exp-h">
+      <div class="exp-logo">家</div>
+      <div><div class="exp-co">家樂福</div><div class="exp-role">收銀員 · 兼職</div></div>
+      <div class="exp-per">短期兼職</div>
+    </div>
+    <ul class="el">
+      <li>負責結帳作業，處理高流量顧客結帳，培養精準快速的操作能力</li>
+      <li>維持收銀台秩序，確保每筆交易金額正確無誤，具備細心核對習慣</li>
+      <li>面對各類顧客需求，學習保持冷靜、有禮且有效率地溝通與應對</li>
+      <li>在高壓零售環境中培養出時間管理與抗壓能力</li>
+    </ul>
+  </div>
+</div>
+
+<div class="sec-bg">
+  <div class="lbl">未來規劃</div>
+  <div class="sec-title">我的下一步</div>
+  <div class="pg">
+    <div class="pc"><div class="ps">短期</div><div class="pi">🔬</div><div class="pt">加入實驗室</div><div class="pd">大二目標加入化材系實驗室，參與專題研究，深入理解材料特性與研發流程，建立第一份學術成果。</div></div>
+    <div class="pc"><div class="ps">中期</div><div class="pi">📚</div><div class="pt">累積研究作品集</div><div class="pd">透過專題累積實質研究成果，為考取研究所打下基礎，同時精進英文學術閱讀與溝通能力。</div></div>
+    <div class="pc"><div class="ps">長期</div><div class="pi">🚀</div><div class="pt">材料科技研發</div><div class="pd">以研究所為跳板，進入科技業研發部門，專注材料創新應用，結合創意思維與專業知識開發新解方。</div></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="lbl">工具與語言</div>
+  <div class="sec-title">我會用什麼</div>
+  <div class="two">
+    <div>
+      <div class="tsub">數位工具</div>
+      <div class="trow"><div class="tname"><span class="tdot" style="background:#1ABCFE;"></span>Canva</div><div class="tbwrap"><div class="tbar" style="width:75%;background:#1ABCFE;"></div></div><span class="tlvl">熟練</span></div>
+      <div class="trow"><div class="tname"><span class="tdot" style="background:#2B579A;"></span>Microsoft Word</div><div class="tbwrap"><div class="tbar" style="width:80%;background:#2B579A;"></div></div><span class="tlvl">熟練</span></div>
+      <div class="trow"><div class="tname"><span class="tdot" style="background:#C4835A;"></span>AI 協作工具</div><div class="tbwrap"><div class="tbar" style="width:60%;background:#C4835A;"></div></div><span class="tlvl">學習中</span></div>
+    </div>
+    <div>
+      <div class="tsub">語言能力</div>
+      <div class="trow"><div class="tname"><span class="tdot" style="background:#8B4E3B;"></span>中文</div><div class="tbwrap"><div class="tbar" style="width:100%;background:#8B4E3B;"></div></div><span class="tlvl">母語</span></div>
+      <div class="trow"><div class="tname"><span class="tdot" style="background:#888780;"></span>英文</div><div class="tbwrap"><div class="tbar" style="width:62%;background:#888780;"></div></div><span class="tlvl">中級・持續練習中</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec-bg">
+  <div class="lbl">興趣愛好</div>
+  <div class="sec-title">讓我充電的事</div>
+  <div class="ig">
+    <div class="ic g1"><div class="inum">01</div><div class="iname">打電動</div><div class="idesc">在虛擬世界裡探索、挑戰、放鬆，是最佳解壓方式。</div></div>
+    <div class="ic g2"><div class="inum">02</div><div class="iname">看小說</div><div class="idesc">沉浸在不同故事裡，獲得感動、啟發與想像。</div></div>
+    <div class="ic g3"><div class="inum">03</div><div class="iname">寫小說</div><div class="idesc">把腦海中的人物和故事化為文字，最自由的創作出口。</div></div>
+    <div class="ic g4"><div class="inum">04</div><div class="iname">唱歌</div><div class="idesc">用聲音傳遞情緒，獨自哼唱或與朋友同樂都讓心情變好。</div></div>
+  </div>
+</div>
+
+<div class="quote-sec">
+  <p class="qt">「與其等到準備好，不如先動再說——邊跑邊想，才是我的節奏。」</p>
+  <p class="qby">— Tiffany Lin</p>
+</div>
+
+<div class="sec">
+  <div class="lbl">聯絡方式</div>
+  <div class="sec-title">與我聯繫</div>
+  <div class="two">
+    <p class="contact-intro">我目前積極尋找材料科技研發相關的實習或實驗室機會。如果您對我有興趣，歡迎透過以下方式聯繫，我會盡快回覆。</p>
+    <div class="cl">
+      <div class="ci"><div class="cion">✉️</div><div><div class="clbl">電子郵件</div><div class="cval">tiffany95101488@gmail.com</div></div></div>
+      <div class="ci"><div class="cion">🏫</div><div><div class="clbl">就讀學校</div><div class="cval">東海大學 化學工程與材料學系</div></div></div>
+      <div class="ci"><div class="cion">📍</div><div><div class="clbl">家鄉 / 現居</div><div class="cval">嘉義市 · 台中市（就學中）</div></div></div>
+    </div>
+  </div>
+</div>
+
+<footer>© 2025 <span>Tiffany Lin 林家均</span> · 以 AI 協作創作 · 東海大學個人品牌作業</footer>

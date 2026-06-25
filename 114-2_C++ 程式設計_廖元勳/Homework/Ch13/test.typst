@@ -1,0 +1,82 @@
+想像你有一本#strong[筆記本]（這就是#strong[物件/變數]）。
+
+#horizontalrule
+
+=== 1. 傳值 (Pass by Value) ------ 「影印給對方」
+<傳值-pass-by-value-影印給對方>
+函數收到的是一份#strong[副本]，怎麼改都不影響原本。
+
+- #strong[缺點]：物件很大時，影印很花時間與記憶體。
+
+#horizontalrule
+
+=== 2. 指標 (Pointer) ------ 「給對方地址」
+<指標-pointer-給對方地址>
+你給對方一張#strong[紙條]，上面寫著筆記本的存放位置。
+
+- #strong[`&`]（取址）：取得紙條上的地址
+- #strong[`*`]（解參考）：拿著地址，找到本人
+
+```cpp
+int a = 5;
+int* p = &a;  // p 存的是 a 的地址
+*p = 10;      // 解參考，直接改 a 本人
+```
+
+`->` 只是 struct/class 的語法糖，等價於
+`(*ptr).member`，跟「找到本人」這個動作本身無關。
+
+- #strong[危險性]：地址可以是空的（`nullptr`），存取前最好檢查。
+
+#horizontalrule
+
+=== 3. 參照 (Reference) ------ 「取個綽號」
+<參照-reference-取個綽號>
+直接幫筆記本取另一個名字，#strong[它就是本人]，不是副本也不是地址。
+
+```cpp
+int a = 5;
+int& r = a;  // r 就是 a，同一個東西
+r = 10;      // a 也變成 10
+```
+
+- #strong[安全性]：宣告時就必須綁定，不能為空，不能改指向別人。
+
+#horizontalrule
+
+=== `&` 的雙重身分（最常搞混的點）
+<的雙重身分最常搞混的點>
+```cpp
+int a = 5;
+int* p = &a;  // 取址運算子：取得 a 的地址
+int& r = a;   // 參照宣告符：r 是 a 的別名
+```
+
+同一個符號，位置不同，意思完全不同。
+
+#horizontalrule
+
+=== 總結
+<總結>
+#figure(
+  align(center)[#table(
+    columns: 5,
+    align: (left,left,center,center,center,),
+    table.header([概念], [你手上拿著什麼], [能改本人？], [效能], [可為空？],),
+    table.hline(),
+    [#strong[傳值]], [副本], [❌], [慢], [---],
+    [#strong[指標]], [地址], [✅], [快], [✅（危險）],
+    [#strong[參照]], [別名], [✅], [快], [❌（安全）],
+  )]
+  , kind: table
+  )
+
+#horizontalrule
+
+=== 那為什麼還需要參照？
+<那為什麼還需要參照>
+指標能做的參照大多也能做，但：
+
++ #strong[語法乾淨]：用 `.` 就好，不用滿版 `*`
++ #strong[保證有效]：不能為空、不能懸空
++ #strong[支援鏈式呼叫]：回傳參照等於把「本人的控制權」直接傳下去，中間沒有任何複製
